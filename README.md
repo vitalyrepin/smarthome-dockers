@@ -49,3 +49,17 @@ docker exec -it smarthome_mqtt_1 mosquitto_pub -t zigbee2mqtt/Brandvarnare/set -
 ```
 
 (Results are in the container logs!)
+
+# Misc
+
+Recommended settings for docker log rotation (`/etc/docker/daemon.json`): 
+
+```
+{
+  "log-driver": "json-file",
+    "log-opts": {"max-size": "15m", "max-file": "3"}
+}
+```
+   
+
+
