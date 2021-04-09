@@ -5,6 +5,9 @@ Config files for my smart home controlled by Raspberry Pi.
 Hardware components:
  - 4 Zigbee lamps (Ikea and Philips HUE)
  - [Smoke detector Honeywell](https://www.zigbee2mqtt.io/devices/JTYJ-GD-01LM_BW.html)
+ - Texas Instruments CC2531 Zigbee dongle with flashed [Zigbee2MQTT](https://www.zigbee2mqtt.io/) firmware
+ - [CC2531 Zigbee dongle case](https://www.thingiverse.com/thing:2803664) printed in 3D printer
+ - Raspberry Pi 3 model B
 
 Software components:
  - [Zigbee2MQTT](https://www.zigbee2mqtt.io/)
