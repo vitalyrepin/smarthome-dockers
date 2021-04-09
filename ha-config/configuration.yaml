@@ -1,0 +1,33 @@
+homeassistant:
+  packages: !include_dir_named packages
+
+light:
+  - platform: mqtt
+    schema: json
+    name: mqtt_json_light_1
+    state_topic: "home/rgb1"
+    command_topic: "home/rgb1/set"
+    brightness: true
+
+mqtt:
+  discovery: true
+  broker: 172.28.1.1
+  birth_message:
+    topic: 'hass/status'
+    payload: 'online'
+  will_message:
+    topic: 'hass/status'
+    payload: 'offline'
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+scene: !include scenes.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml

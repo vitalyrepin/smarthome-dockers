@@ -1,0 +1,98 @@
+- id: '1615111277313'
+  name: Lights in the dark
+  entities:
+    light.0x680ae2fffe4b18ec_light:
+      brightness: 1
+      color:
+        x: 0.4599
+        y: 0.4106
+      color_temp: 454
+      friendly_name: Ikea_Bulb_light
+      linkquality: 23
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 43
+      update_available: false
+    light.lamp_1_light:
+      brightness: 254
+      color_temp: 357
+      friendly_name: Lamp_1_light
+      linkquality: 21
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 43
+      update_available: false
+    light.lamp_2_light:
+      brightness: 254
+      color_temp: 418
+      friendly_name: Lamp_2_light
+      linkquality: 110
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 43
+      update_available: false
+    light.lamp_3_ikea_kron_light:
+      brightness: 1
+      color:
+        x: 0.4599
+        y: 0.4106
+      color_temp: 271
+      friendly_name: Lamp_3_Ikea_Kron_light
+      linkquality: 23
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 43
+      update_available: false
+- id: '1615111465492'
+  name: 'No lights'
+  entities:
+    light.0x680ae2fffe4b18ec_light:
+      brightness: 1
+      color:
+        x: 0.4599
+        y: 0.4106
+      color_temp: 454
+      friendly_name: Ikea_Bulb_light
+      linkquality: 26
+      max_mireds: 500
+      min_mireds: 153
+      state: 'off'
+      supported_features: 43
+      update_available: false
+    light.lamp_1_light:
+      brightness: 253
+      color_temp: 357
+      friendly_name: Lamp_1_light
+      linkquality: 21
+      max_mireds: 500
+      min_mireds: 153
+      state: 'off'
+      supported_features: 43
+      update_available: false
+    light.lamp_2_light:
+      brightness: 253
+      color_temp: 418
+      friendly_name: Lamp_2_light
+      linkquality: 110
+      max_mireds: 500
+      min_mireds: 153
+      state: 'off'
+      supported_features: 43
+      update_available: false
+    light.lamp_3_ikea_kron_light:
+      brightness: 1
+      color:
+        x: 0.4599
+        y: 0.4106
+      color_temp: 271
+      friendly_name: Lamp_3_Ikea_Kron_light
+      linkquality: 26
+      max_mireds: 500
+      min_mireds: 153
+      state: 'off'
+      supported_features: 43
+      update_available: false

@@ -1,0 +1,45 @@
+- alias: Turn on window lights in the evening
+  initial_state: true
+  trigger:
+     platform: sun
+     # Possible values: sunset, sunrise
+     event: sunset
+     offset: "-00:05:00"
+  condition: 
+    condition: not
+    conditions:
+      - condition: time
+        after: "23:50:00"
+  action: 
+    scene: scene.lights_in_the_dark
+- alias: Turn off window lights in the night
+  initial_state: true
+  trigger:
+     platform: time
+     at: "00:15:15"
+  action:
+    scene: scene.no_lights
+- alias: Turn on window lights in the morning
+  initial_state: true
+  trigger:
+     platform: time
+     at: "07:00:00"
+  condition: 
+    condition: not
+    conditions:
+      # Turn the lights on only if sun is below the horizon
+      - condition: state
+        entity_id: sun.sun
+        state: "above_horizon"      
+  action:
+     scene: scene.lights_in_the_dark
+- alias: Turn off window lights in the morning
+  initial_state: true
+  trigger:
+     platform: sun
+     # Possible values: sunset, sunrise
+     event: sunrise
+     offset: "+00:05:00"
+  action:
+     scene: scene.no_lights
+

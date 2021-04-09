@@ -1,0 +1,42 @@
+homeassistant: true
+permit_join: true
+mqtt:
+  base_topic: zigbee2mqtt
+  server: 'mqtt://172.28.1.1'
+serial:
+  port: /dev/ttyACM0
+  disable_led: true
+advanced:
+  report: true
+  network_key:
+    - 31
+    - 249
+    - 2
+    - 118
+    - 79
+    - 53
+    - 74
+    - 13
+    - 168
+    - 0
+    - 152
+    - 194
+    - 76
+    - 16
+    - 164
+    - 177
+devices:
+  '0x001788010885094b':
+    friendly_name: Lamp_1
+    device_options:
+      hue_power_on_behavior: recover
+  '0x0017880108688ef7':
+    friendly_name: Lamp_2
+    device_options:
+      hue_power_on_behavior: recover
+  '0x680ae2fffe4b5efc':
+    friendly_name: Lamp_3_Ikea_Kron
+  '0x680ae2fffe4b18ec':
+    friendly_name: Ikea_Bulb
+  '0x00158d0004a9614d':
+    friendly_name: Brandvarnare

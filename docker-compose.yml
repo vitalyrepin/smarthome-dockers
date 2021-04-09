@@ -1,0 +1,53 @@
+version: '3'
+services:
+  homeassistant:
+    container_name: home-assistant
+    image: homeassistant/home-assistant:stable
+    depends_on:
+      - zigbee2mqtt
+      - mqtt
+    volumes:
+      - ./ha-config:/config
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    networks:
+      - smarthome_net
+    ports:
+          - "8123:8123"
+  zigbee2mqtt:
+      container_name: zigbee2mqtt
+      image: koenkk/zigbee2mqtt
+      volumes:
+        - ./zigbee2mqtt-data:/app/data
+        - /run/udev:/run/udev:ro
+        - /etc/localtime:/etc/localtime:ro
+      devices:
+        - /dev/ttyACM0:/dev/ttyACM0
+      networks:
+        - smarthome_net
+      depends_on:
+        - mqtt
+      restart: always
+      privileged: true
+  mqtt:
+      image: eclipse-mosquitto:latest
+      restart: always
+      ports:
+        - "1883:1883"
+        - "9001:9001"
+      networks:
+         smarthome_net:
+              ipv4_address: 172.28.1.1
+      volumes:
+        - ./mqtt/config:/mosquitto/config
+        - ./mqtt/data:/mosquitto/data
+        - ./mqtt/log:/mosquitto/log
+        - ./mqtt/db:/var/lib/mosquitto/
+        - /etc/localtime:/etc/localtime:ro
+
+networks:
+    smarthome_net:
+        ipam:
+            driver: default
+            config:
+                - subnet: 172.28.0.0/16

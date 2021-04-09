@@ -1,0 +1,7 @@
+window_lights:
+  name: Window lights
+  entities:
+    - light.lamp_1_light
+    - light.lamp_2_light
+    - light.lamp_3_Ikea_Kron_light
+    - light.0x680ae2fffe4b18ec_light
